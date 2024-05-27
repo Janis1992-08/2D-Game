@@ -1,31 +1,34 @@
 package org.example;
 
-public class PlayerCharacter {
-    private int x;
-    private int y;
 
-    public PlayerCharacter() {
-        this.x = 0;
-        this.y = 0;
+public class PlayerCharacter {
+    static int y = 0;
+    static int x = 0;
+
+    public static void main(String[] args) {
+
     }
 
-    public int getX() {
+    public static int getX() {
         return x;
     }
 
-    public int getY() {
+    public static int getY() {
         return y;
     }
 
-    public void move(char direction) {
-        if (direction == 'W') {
-            y++;
-        } else if (direction == 'S') {
-            y--;
-        } else if (direction == 'D') {
-            x++;
-        } else if (direction == 'A') {
-            x--;
+    public static void move(String direction) {
+        if (direction.equalsIgnoreCase("w")) {
+            y += 1;
+        }
+        if (direction.equalsIgnoreCase("s")) {
+            y -= 1;
+        }
+        if (direction.equalsIgnoreCase("a")) {
+            x -= 1;
+        }
+        if (direction.equalsIgnoreCase("d")) {
+            x += 1;
         }
     }
 }
